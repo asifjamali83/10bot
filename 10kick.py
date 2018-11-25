@@ -4,7 +4,7 @@ from LINEPY import *
 from akad.ttypes import *
 from multiprocessing import Pool, Process
 from time import sleep
-import pytz, datetime, pafy, time, timeit, random, sys, ast, re, os, json, subprocess, threading, string, codecs, requests, tweepy, ctypes, urllib, wikipedia
+#import pytz, datetime, pafy, time, timeit, random, sys, ast, re, os, json, subprocess, threading, string, codecs, requests, tweepy, ctypes, urllib, wikipedia
 from datetime import timedelta, date
 from datetime import datetime
 from bs4 import BeautifulSoup
@@ -16,83 +16,95 @@ import youtube_dl
 # CUKUP GANTI  MID ADMIN DAN JANGAN MASUKIN TOKENX DISINI 
 # TAPI DI boyfira.json FAHAM GAK FAHAM TERLALU
 # CREATOR BY SELFBOT-BY:MAX 
-
-botStart = time.time()
-mulai = time.time()
-tokenOpen = codecs.open("boyfira.json","r","utf-8")
-token = json.load(tokenOpen)
+#================#
    
 boy = LineClient()
 #boy = LineClient(token["boy"])
 channel = LineChannel(boy,boy.server.CHANNEL_ID['LINE_TIMELINE'])
 boy.log("Auth Token : " + str(boy.authToken))
+poll = LinePoll(boy)
+call = LineCall(boy)
+lineProfile = boy.getProfile()
+lineSettings = boy.getSettings()
+mid = boy.getProfile().mid
+responsename1 = boy.getProfile().displayName
 
 k1 = LineClient()
 #K1 = LineClient(token["k1"])
 channel1 = LineChannel(k1,k1.server.CHANNEL_ID['LINE_TIMELINE'])
 k1.log("Auth Token : " + str(k1.authToken))
+lineProfile = ki.getProfile()
+lineSettings = ki.getSettings()
+Amid = ki.getProfile().mid
+responsename2 = ki.getProfile().displayName
 
-k2 = LineClient()
+#k2 = LineClient()
 #K2 = LineClient(token["k2"])
-channel2 = LineChannel(k2,k2.server.CHANNEL_ID['LINE_TIMELINE'])
-k2.log("Auth Token : " + str(k2.authToken))
+#channel2 = LineChannel(k2,k2.server.CHANNEL_ID['LINE_TIMELINE'])
+#k2.log("Auth Token : " + str(k2.authToken))
 
-k3 = LineClient()
+#k3 = LineClient()
 #K3 = LineClient(token["k3"])
-channel3 = LineChannel(k3,k3.server.CHANNEL_ID['LINE_TIMELINE'])
-k3.log("Auth Token : " + str(k3.authToken))
+#channel3 = LineChannel(k3,k3.server.CHANNEL_ID['LINE_TIMELINE'])
+#k3.log("Auth Token : " + str(k3.authToken))
 
-k4 = LineClient()
+#k4 = LineClient()
 #K4 = LineClient(token["k4"])
-channel4 = LineChannel(k4,k4.server.CHANNEL_ID['LINE_TIMELINE'])
-k4.log("Auth Token : " + str(k4.authToken))
+#channel4 = LineChannel(k4,k4.server.CHANNEL_ID['LINE_TIMELINE'])
+#k4.log("Auth Token : " + str(k4.authToken))
 
-k5 = LineClient()
+#k5 = LineClient()
 #K5 = LineClient(token["k5"])
-channel5 = LineChannel(k5,k5.server.CHANNEL_ID['LINE_TIMELINE'])
-k5.log("Auth Token : " + str(k5.authToken))
+#channel5 = LineChannel(k5,k5.server.CHANNEL_ID['LINE_TIMELINE'])
+#k5.log("Auth Token : " + str(k5.authToken))
 
-k6 = LineClient()
+#k6 = LineClient()
 #K6 = LineClient(token["k6"])
-channel6 = LineChannel(k6,k6.server.CHANNEL_ID['LINE_TIMELINE'])
-k6.log("Auth Token : " + str(k6.authToken))
+#channel6 = LineChannel(k6,k6.server.CHANNEL_ID['LINE_TIMELINE'])
+#k6.log("Auth Token : " + str(k6.authToken))
 
-k7 = LineClient()
+#k7 = LineClient()
 #K7 = LineClient(token["k7"])
-channel7 = LineChannel(k7,k7.server.CHANNEL_ID['LINE_TIMELINE'])
-k7.log("Auth Token : " + str(k7.authToken))
+#channel7 = LineChannel(k7,k7.server.CHANNEL_ID['LINE_TIMELINE'])
+#k7.log("Auth Token : " + str(k7.authToken))
 
-k8 = LineClient()
+#k8 = LineClient()
 #K8 = LineClient(token["k8"])
-channel8 = LineChannel(k8,k8.server.CHANNEL_ID['LINE_TIMELINE'])
-k8.log("Auth Token : " + str(k8.authToken))
+#channel8 = LineChannel(k8,k8.server.CHANNEL_ID['LINE_TIMELINE'])
+#k8.log("Auth Token : " + str(k8.authToken))
 
-k9 = LineClient()
+#k9 = LineClient()
 #K9 = LineClient(token["k9"])
-channel9 = LineChannel(k9,k9.server.CHANNEL_ID['LINE_TIMELINE'])
-k9.log("Auth Token : " + str(k9.authToken))
+#channel9 = LineChannel(k9,k9.server.CHANNEL_ID['LINE_TIMELINE'])
+#k9.log("Auth Token : " + str(k9.authToken))
 
-k10 = LineClient()
+#k10 = LineClient()
 #K10 = LineClient(token["k10"])
-channel10 = LineChannel(k10,k10.server.CHANNEL_ID['LINE_TIMELINE'])
-k10.log("Auth Token : " + str(k10.authToken))
+#channel10 = LineChannel(k10,k10.server.CHANNEL_ID['LINE_TIMELINE'])
+#k10.log("Auth Token : " + str(k10.authToken))
 
 sw = LineClient()
 #sw = LineClient(token["sw"])
 sw.log("Auth Token : " + str(sw.authToken))
+lineProfile = sw.getProfile()
+lineSettings = sw.getSettings()
+Zmid = sw.getProfile().mid
+responsename7 = sw.getProfile().displayName
+
+print("---LOGIN SUCCES---")
 
 #ubah mid di dalem admin,owner,creator.json dengan mid kalian
 poll = LinePoll(boy)
 poll = LinePoll(k1)
-poll = LinePoll(k2)
-poll = LinePoll(k3)
-poll = LinePoll(k4)
-poll = LinePoll(k5)
-poll = LinePoll(k6)
-poll = LinePoll(k7)
-poll = LinePoll(k8)
-poll = LinePoll(k9)
-poll = LinePoll(k10)
+#poll = LinePoll(k2)
+#poll = LinePoll(k3)
+#poll = LinePoll(k4)
+#poll = LinePoll(k5)
+#poll = LinePoll(k6)
+#poll = LinePoll(k7)
+#poll = LinePoll(k8)
+#poll = LinePoll(k9)
+#poll = LinePoll(k10)
 call = boy
 creator = ["uafd65893655c791f07c9ff31cbbc28d1"]
 owner = ["uafd65893655c791f07c9ff31cbbc28d1"]
@@ -100,19 +112,19 @@ admin = ["uafd65893655c791f07c9ff31cbbc28d1"]
 staff = ["uafd65893655c791f07c9ff31cbbc28d1"]
 mid = boy.getProfile().mid
 Amid = k1.getProfile().mid
-Bmid = k2.getProfile().mid
-Cmid = k3.getProfile().mid
-Dmid = k4.getProfile().mid
-Emid = k5.getProfile().mid
-Fmid = k6.getProfile().mid
-Gmid = k7.getProfile().mid
-Hmid = k8.getProfile().mid
-Imid = k9.getProfile().mid
-Jmid = k10.getProfile().mid
+#Bmid = k2.getProfile().mid
+#Cmid = k3.getProfile().mid
+#Dmid = k4.getProfile().mid
+#Emid = k5.getProfile().mid
+#Fmid = k6.getProfile().mid
+#Gmid = k7.getProfile().mid
+#Hmid = k8.getProfile().mid
+#Imid = k9.getProfile().mid
+#Jmid = k10.getProfile().mid
 Zmid = sw.getProfile().mid
-KAC = [boy,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,sw]
-ABC = [boy,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,sw]
-Bots = [mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,Jmid,Zmid]
+KAC = [boy,k1,sw]
+ABC = [boy,k1,sw]
+Bots = [mid,Amid,Zmid]
 Boy = admin + staff + creator
 
 protectqr = []
@@ -131,58 +143,158 @@ translateth = []
 translatetw = []
 translatear = []
 
-myProfile = {
-	"displayName": "",
-	"statusMessage": "",
-	"pictureStatus": ""
-}
 
 boyProfile = boy.getProfile()
 myProfile["displayName"] = boyProfile.displayName
 myProfile["statusMessage"] = boyProfile.statusMessage
 myProfile["pictureStatus"] = boyProfile.pictureStatus
 
-responsename1 = k1.getProfile().displayName
-responsename2 = k2.getProfile().displayName
-responsename3 = k3.getProfile().displayName
-responsename4 = k4.getProfile().displayName
-responsename5 = k5.getProfile().displayName
-responsename6 = k6.getProfile().displayName
-responsename7 = k7.getProfile().displayName
-responsename8 = k8.getProfile().displayName
-responsename9 = k9.getProfile().displayName
-responsename10 = k10.getProfile().displayName
-responsename = sw.getProfile().displayName
+msg_dict = {}
+msg_dict1 = {}
 
+settings = {
+    "Picture":False,
+    "group":{},
+    "changeCover":False,
+    "changeVideo":False,
+    "groupPicture":False,
+    "changePicture":False,
+    "autoJoinTicket":False,
+    "restartPoint":False,
+    "userMention":{},
+    "timeRestart":{},
+    "server":{},
+    "simiSimi":{},
+    "userAgent": [
+        "Mozilla/5.0 (X11; U; Linux i586; de; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (X11; U; Linux amd64; rv:5.0) Gecko/20100101 Firefox/5.0 (Debian)",
+        "Mozilla/5.0 (X11; U; Linux amd64; en-US; rv:5.0) Gecko/20110619 Firefox/5.0",
+        "Mozilla/5.0 (X11; Linux) Gecko Firefox/5.0",
+        "Mozilla/5.0 (X11; Linux x86_64; rv:5.0) Gecko/20100101 Firefox/5.0 FirePHP/0.5",
+        "Mozilla/5.0 (X11; Linux x86_64; rv:5.0) Gecko/20100101 Firefox/5.0 Firefox/5.0",
+        "Mozilla/5.0 (X11; Linux x86_64) Gecko Firefox/5.0",
+        "Mozilla/5.0 (X11; Linux ppc; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (X11; Linux AMD64) Gecko Firefox/5.0",
+        "Mozilla/5.0 (X11; FreeBSD amd64; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:5.0) Gecko/20110619 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 6.1; rv:6.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 6.1.1; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 5.2; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 5.1; U; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 5.1; rv:2.0.1) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 5.0; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 5.0; rv:5.0) Gecko/20100101 Firefox/5.0"
+    ]
+}
+
+wait = {
+    "owner":{},
+    "admin":{},
+    "creator":{},
+    "addadmin":False,
+    "delladmin":False,
+    "staff":{},
+    "addstaff":False,
+    "dellstaff":False,
+    "bots":{},
+    "addbots":False,
+    "dellbots":False,
+    "blacklist":{
+        "u5a0b4bb5d3a6d48aca8473326062af75": True,
+        "u52b56623db1632669557da233322dae6": True,
+        "u1f80bb313c70560510907c121185a354": True
+    },
+    "wblacklist":False,
+    "dblacklist":False,
+    "Talkblacklist":{},
+    "Talkwblacklist":False,
+    "Talkdblacklist":False,
+    "talkban":False,
+    "contact":False,
+    "invite":False,
+    'autoJoin':True,
+    'autoAdd':False,
+    'autoBlock':False,
+    'Timeline':False,
+    'like': False,
+    'autoLeave':False,
+    'autoLeave1':False,
+    "detectMention":False,
+    "mentionKick":False,
+    "welcomeOn":False,
+    "stickerOn":False,
+    "Addsticker":{
+            "name": "",
+            "status":False
+            },
+    "stk":{},
+    "selfbot":True,
+    "Images":{},
+    "Img":{},
+    "Addimage":{
+            "name": "",
+            "status":False
+            },
+    "Videos":{},
+    "Addaudio": {
+            "name": "",
+            "status":False
+            },
+    "Addvideo": {
+            "name": "",
+            "status":False
+            },
+    "limit":5,
+    "unsend":False,
+    "mention":"Ngintip aja nih...",
+    "Respontag":"Sekali lagi tag,gue ipok lho... ",
+    "welcome":"Welcome...",
+    "leave":"See you next againt later...",
+    "comment":"Super Like by: Bot...",
+    "message":"Ready bots Protection \nProteCT your Groups...",
+    }
+
+read = {
+    "readPoint":{},
+    "readMember":{},
+    "readTime":{},
+    "ROM":{},
+}
 cctv = {
     "cyduk":{},
     "point":{},
     "sidermem":{}
 }
 
-with open('creator.json', 'r') as fp:
-    creator = json.load(fp)
-with open('owner.json', 'r') as fp:
-    owner = json.load(fp)
-with open('admin.json', 'r') as fp:
-    admin = json.load(fp)    
+myProfile = {
+	"displayName": "",
+	"statusMessage": "",
+	"pictureStatus": ""
+}
 
-Setbot1 = codecs.open("setting.json","r","utf-8")
-Setmain = json.load(Setbot1)
-Setbot2 = codecs.open("settings.json","r","utf-8")
-settings = json.load(Setbot2)
-Setbot3 = codecs.open("wait.json","r","utf-8")
-wait = json.load(Setbot3)
-Setbot4 = codecs.open("read.json","r","utf-8")
-read = json.load(Setbot4)
+myProfile["displayName"] = lineProfile.displayName
+myProfile["statusMessage"] = lineProfile.statusMessage
+myProfile["pictureStatus"] = lineProfile.pictureStatus
+
+with open('creator.json', 'r') as fp:
+     creator = json.load(fp)
+with open('owner.json', 'r') as fp:
+     owner = json.load(fp)
+
+Setbot = codecs.open("setting.json","r","utf-8")
+imagesOpen = codecs.open("image.json","r","utf-8")
+videosOpen = codecs.open("video.json","r","utf-8")
+stickersOpen = codecs.open("sticker.json","r","utf-8")
+audiosOpen = codecs.open("audio.json","r","utf-8")
+Setmain = json.load(Setbot)
+images = json.load(imagesOpen)
+videos = json.load(videosOpen)
+stickers = json.load(stickersOpen)
+audios = json.load(audiosOpen)
 
 mulai = time.time()
-
-msg_dict = {}
-msg_dict1 = {}
-
-tz = pytz.timezone("Asia/Jakarta")
-timeNow = datetime.now(tz=tz)
 
 def download_page(url):
     version = (3,0)
@@ -443,10 +555,10 @@ def help():
                   "╠❂͜͡☬➣ " + key + "Help 4\n" + \
                   "╠❂͜͡☬➣ " + key + "Me\n" + \
                   "╠❂͜͡☬➣ " + key + "Mid\n" + \
-                  "╠❂͜͡☬➣ " + key + "Mid「@」\n" + \
-                  "╠❂͜͡☬➣ " + key + "Info「@」\n" + \
-                  "╠❂͜͡☬➣ " + key + "Nk「@」\n" + \
-                  "╠❂͜͡☬➣ " + key + "Kick「@」\n" + \
+                  "╠❂͜͡☬➣ " + key + "Mid��@��\n" + \
+                  "╠❂͜͡☬➣ " + key + "Info��@ �\n" + \
+                  "╠❂͜͡☬➣ " + key + "Nk��@��\n" + \
+                  "╠❂͜͡☬➣ " + key + "Kick��@��\n" + \
                   "╠❂͜͡☬➣ " + key + "Mybot\n" + \
                   "╠❂͜͡☬➣ " + key + "Status\n" + \
                   "╠❂͜͡☬➣ " + key + "Status translate\n" + \
